@@ -11,11 +11,12 @@ import SwiftUI
 struct TabbarView : View {
     @EnvironmentObject var state: AppState
     @State var selectedIndex: Int = 0
-    
+    var uuid = UUID().uuidString.dropLast(28)
+  
     var body: some View {
         TabbedView(selection: $selectedIndex) {
             UsersListView()
-                .tabItemLabel(Text("Users " + UUID().uuidString.dropLast(28)))
+                .tabItemLabel(Text("Users " + uuid))
             MapView()
                 .tabItemLabel(Text("Map"))
         }
