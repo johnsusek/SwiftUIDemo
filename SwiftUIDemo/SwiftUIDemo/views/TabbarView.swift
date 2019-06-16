@@ -15,7 +15,7 @@ struct TabbarView : View {
     var body: some View {
         TabbedView(selection: $selectedIndex) {
             UsersListView()
-                .tabItemLabel(Text("Users"))
+                .tabItemLabel(Text("Users " + UUID().uuidString.dropLast(28)))
             MapView()
                 .tabItemLabel(Text("Map"))
         }
